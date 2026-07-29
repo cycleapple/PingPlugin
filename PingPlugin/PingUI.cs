@@ -138,14 +138,13 @@ namespace PingPlugin
 
             ImGui.Spacing();
 
-            var trackerKinds = Enum.GetValues<PingTrackerKind>();
-            var trackerNames = trackerKinds.Where(t => t != PingTrackerKind.Packets).Select(t => t.FormatName())
-                .ToArray();
-            var tracker = (int)this.pingTracker.Kind;
+            var trackerKinds = new[] { PingTrackerKind.Aggregate };
+            var trackerNames = trackerKinds.Select(t => t.FormatName()).ToArray();
+            var tracker = 0;
             if (ImGui.Combo(Loc.Localize("PingTracker", "Ping Tracker"), ref tracker, trackerNames,
                     trackerNames.Length))
             {
-                var trackerKind = (PingTrackerKind)tracker;
+                var trackerKind = trackerKinds[tracker];
 
                 this.config.TrackingMode = trackerKind;
                 this.config.Save();

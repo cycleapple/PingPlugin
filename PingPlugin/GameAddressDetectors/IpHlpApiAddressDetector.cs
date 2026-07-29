@@ -38,6 +38,7 @@ namespace PingPlugin.GameAddressDetectors
             var pTcpTable = Marshal.AllocHGlobal(bufferLength);
 
             var address = IPAddress.Loopback;
+            var remotePort = (ushort)0;
             try
             {
                 var error = GetExtendedTcpTable(pTcpTable, ref bufferLength, false, AF_INET,
@@ -73,6 +74,7 @@ namespace PingPlugin.GameAddressDetectors
                     if ((int)tcpPid == pid && InXIVPortRange(tcpRemotePort))
                     {
                         address = tcpRemoteAddr;
+                        remotePort = tcpRemotePort;
                         break;
                     }
                 }
@@ -88,6 +90,7 @@ namespace PingPlugin.GameAddressDetectors
             }
 
             Address = address;
+            EndPoint = new IPEndPoint(address, remotePort);
             return Task.FromResult(Address);
         }
 

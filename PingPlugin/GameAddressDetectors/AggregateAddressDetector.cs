@@ -60,6 +60,7 @@ namespace PingPlugin.GameAddressDetectors
             }
 
             Address = address;
+            EndPoint = bestDetector.EndPoint;
             return Address;
         }
     }

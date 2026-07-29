@@ -1,6 +1,6 @@
 ﻿{
   "PingTrackerKindAutodetect": {
-    "message": "Autodetect (Default)",
+    "message": "TCP (Taiwan servers)",
     "description": "PingPlugin.Kind"
   },
   "PingTrackerKindCOM": {

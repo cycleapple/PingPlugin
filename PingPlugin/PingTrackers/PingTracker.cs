@@ -13,7 +13,7 @@ namespace PingPlugin.PingTrackers
     public abstract class PingTracker : IDisposable
     {
         private readonly CancellationTokenSource tokenSource;
-        private readonly GameAddressDetector addressDetector;
+        protected readonly GameAddressDetector addressDetector;
         protected readonly PingConfiguration config;
         private readonly IPluginLog pluginLog;
 

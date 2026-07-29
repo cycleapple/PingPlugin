@@ -17,7 +17,7 @@ namespace PingPlugin.PingTrackers
         {
             return kind switch
             {
-                PingTrackerKind.Aggregate => Loc.Localize("PingTrackerKindAutodetect", string.Empty),
+                PingTrackerKind.Aggregate => Loc.Localize("PingTrackerKindAutodetect", "TCP"),
                 PingTrackerKind.COM => Loc.Localize("PingTrackerKindCOM", string.Empty),
                 PingTrackerKind.IpHlpApi => Loc.Localize("PingTrackerKindWin32API", string.Empty),
                 PingTrackerKind.Packets => Loc.Localize("PingTrackerKindPackets", string.Empty),

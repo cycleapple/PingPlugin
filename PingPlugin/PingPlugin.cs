@@ -60,13 +60,9 @@ namespace PingPlugin
         {
             this.pingTracker?.Dispose();
             
-            PingTracker newTracker = kind switch
-            {
-                PingTrackerKind.Aggregate or PingTrackerKind.Packets => new AggregatePingTracker(this.config, this.addressDetector, this.pluginLog),
-                PingTrackerKind.COM => new ComponentModelPingTracker(this.config, this.addressDetector, this.pluginLog),
-                PingTrackerKind.IpHlpApi => new IpHlpApiPingTracker(this.config, this.addressDetector, this.pluginLog),
-                _ => throw new ArgumentOutOfRangeException(nameof(kind)),
-            };
+            // The Taiwan servers do not answer ICMP echo requests. Always use a TCP handshake
+            // against the endpoint discovered from the active game connection.
+            PingTracker newTracker = new TcpPingTracker(this.config, this.addressDetector, this.pluginLog);
 
             this.pingTracker = newTracker;
             if (this.pingTracker == null)

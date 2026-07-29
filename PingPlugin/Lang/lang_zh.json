@@ -1,6 +1,6 @@
 ﻿{
   "PingTrackerKindAutodetect": {
-    "message": "Autodetect (Default)",
+    "message": "TCP（台服）",
     "description": "PingPlugin.Kind"
   },
   "PingTrackerKindCOM": {

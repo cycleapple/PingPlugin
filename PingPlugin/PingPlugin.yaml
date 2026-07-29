@@ -1,8 +1,8 @@
 ﻿name: PingPlugin
 author: karashiiro
-description: A ping display plugin for Dalamud.
-punchline: A ping display plugin for Dalamud.
-repo_url: https://github.com/karashiiro/PingPlugin
+description: Displays TCP latency to the active FFXIV server without relying on ICMP.
+punchline: Display TCP latency to the active FFXIV server.
+repo_url: https://github.com/cycleapple/PingPlugin/tree/api13-tw
 tags: [ "ping", "monitor", "utility", "tool" ]
 icon_url: https://raw.githubusercontent.com/karashiiro/PingPlugin/main/Assets/icon.png
 image_urls: [ "https://raw.githubusercontent.com/karashiiro/PingPlugin/main/Assets/image1.png" ]
